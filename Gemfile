@@ -29,6 +29,8 @@ gem 'foundation-rails'
 
 gem 'faraday'
 
+gem 'json'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -43,6 +45,8 @@ group :development, :test do
   gem 'byebug'
 
   gem 'rspec-rails', '~> 3.0'
+  gem 'webmock'
+  gem 'capybara-webkit'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   # gem 'web-console', '~> 2.0'
