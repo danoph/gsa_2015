@@ -40,12 +40,15 @@ gem 'json'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :test do
+  gem 'webmock'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
   gem 'rspec-rails', '~> 3.0'
-  gem 'webmock'
   gem 'capybara-webkit'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
