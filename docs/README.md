@@ -14,7 +14,7 @@ Iterative Process:
 User Experience Documentation:
 - user-interviews.md
 
-## WWT Asynchrony Labs Practice Documentation
+## WWT Asynchrony Labs Processes Documentation
 
 General documentation of practices:
 
