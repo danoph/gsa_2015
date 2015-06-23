@@ -27,8 +27,15 @@ describe SearchResults do
     end
   end
 
+  describe '#error_message' do
+    it 'is blank' do
+      expect(subject.error_message).to be_blank
+    end
+  end
+
   describe '#error' do
-    let(:raw_response) { { error: { code: "NOT_FOUND", message: "No matches found!" } } }
+    let(:error_message) { double 'error message' }
+    let(:raw_response) { { error: { code: "NOT_FOUND", message: error_message } } }
 
     it 'sets total to 0' do
       expect(subject.total).to eq(0)
@@ -36,6 +43,10 @@ describe SearchResults do
 
     it 'has an error' do
       expect(subject.error?).to eq(true)
+    end
+
+    it 'error message should be set' do
+      expect(subject.error_message).to eq(error_message)
     end
   end
 end

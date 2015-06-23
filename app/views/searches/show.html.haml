@@ -1,4 +1,11 @@
 %h1.medication-header
   Search: #{@search.query}
 
-= @search.results
+- if @search.error?
+  %p= @search.error_message
+- else
+  - @search.results.each do |result|
+    %p
+      %strong= result[:openfda][:generic_name]
+
+  = @search.results

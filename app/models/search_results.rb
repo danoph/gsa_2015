@@ -11,6 +11,10 @@ class SearchResults
     @raw_response.has_key?(:error)
   end
 
+  def error_message
+    @raw_response[:error].fetch(:message, "") if error?
+  end
+
   def meta
     @raw_response.fetch(:meta, {})
   end
