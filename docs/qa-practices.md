@@ -11,7 +11,7 @@ Next, we ask questions regarding the application's workflow, checking for design
 
 Once it is time to perform exploratory and manual testing, our quality assurance engineers run a "smoke test," which determines if the build of the app was dead on arrival (i.e., is smoke coming out of it?). Next, they  test the highest risk areas, such as anything that was recently changed in development and anything that's a high priority to the client. Regression testing goes over all the features in detail.
 
-The specific tests we perform will change over the course of a project. While Asynchrony does not prescribe a rigid set of procedures for each project, our quality assurance engineers are empowered to craft their work to the unique needs of each application. 
+The specific tests we perform will change over the course of a project. While we do not prescribe a rigid set of procedures for each project, our quality assurance engineers are empowered to craft their work to the unique needs of each application. 
 
 Further detail about some of our QA strategies and methods can be found below:
 
