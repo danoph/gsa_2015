@@ -13,9 +13,10 @@ describe 'Home page' do
     it 'shows search results' do
       visit root_path
       fill_in 'Search', with: 'adderall'
-      click_button 'Search'
 
-      expect(page).to have_content('Attention Deficit Disorder with Hyperactivity')
+      click_button('search-button')
+
+      expect(page).to have_content('adderall')
     end
   end
 end

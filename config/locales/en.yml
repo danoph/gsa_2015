@@ -22,4 +22,7 @@
 en:
   hello: "Hello world"
   search: "Search"
-  search_box_hint: "Enter search criteria"
+  search_box_hint: "Search for meds"
+  browse_by_name: "Browse by name"
+  find_a_medication: "Find a Medication"
+

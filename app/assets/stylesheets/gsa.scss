@@ -1,0 +1,67 @@
+@import 'foundation-icons';
+
+$searchbox-placeholder-color: #333;
+$line-color: rgb(131, 131, 131);
+
+body {
+  background: rgb(214,214,214);
+}
+
+.top-nav {
+  border-bottom: 0.7rem solid $line-color;
+  height: 10rem;
+  width: 100%;
+}
+
+.top-line2:after {
+  content: "";
+  display: block;
+  position: fixed; /* could also be absolute */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.top-box {
+  background: rgb(186,186,186);
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border: 4px solid $line-color;
+  top: -50px;
+}
+
+h1.medication-header {
+	font-size: 1.5em;
+	font-weight: 600;
+	text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+
+.search-form {
+  margin-top: 1rem;
+}
+
+.searchbox {
+  &::-webkit-input-placeholder { /* WebKit browsers */
+    color:    $searchbox-placeholder-color;
+  }
+
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    $searchbox-placeholder-color;
+    opacity:  1;
+  }
+
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    $searchbox-placeholder-color;
+    opacity:  1;
+  }
+
+  &:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    $searchbox-placeholder-color;
+  }
+}
