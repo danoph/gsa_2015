@@ -4,6 +4,6 @@ class Search
   attr_accessor :generic_name
 
   def self.search_generic_name(query)
-    FdaApi.get_label(query)
+    SearchResults.new(query, FdaApi.get_label(query))
   end
 end

@@ -1,6 +1,5 @@
 class SearchesController < ApplicationController
   def show
-    @search_query = params[:search][:generic_name]
-    @results = Search.search_generic_name(@search_query)
+    @search = Search.search_generic_name(params[:search][:generic_name])
   end
 end
