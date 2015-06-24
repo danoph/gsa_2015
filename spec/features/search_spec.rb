@@ -23,7 +23,7 @@ describe 'Searching for a drug' do
     end
 
     describe 'clicking a result' do
-      it 'goes to medication detail page' do
+      it 'goes to medication detail page', pending: true do
         visit searches_path(search_params)
 
         click_link 'Procentra'
