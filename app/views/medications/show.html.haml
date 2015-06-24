@@ -2,15 +2,21 @@
   %p
     No matches found!
 - else
+  %ul{ :data => {'accordion'=>true, 'class' => "accordian"} }
   %h1.medication-header
     = display_field @medication.openfda.brand_name
+  -if @medication.warnings?
+    .warnings
+      = display_field @medication.warnings
 
-  %h2
+  %h4
     Generic Name
   %p
     = display_field @medication.openfda.generic_name
 
+  %h4
+    Indications and Usage
   %p
-    = display_field @medication.warnings
+    = display_field @medication.indications_and_usage
 
-  = @medication
+

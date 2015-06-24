@@ -27,36 +27,56 @@ $line-color: rgb(131, 131, 131);
 
 body {
   background: rgb(214,214,214);
-  font-family: montserratregular, Helvetica, Arial, sans-serif;
+  font-family: 'montserratregular', Helvetica, Arial, sans-serif;
 }
 
 strong {
-  font-family: 'montserratbold';
+  font-family: 'montserratbold', Helvetica, Arial, sans-serif;
 }
 
 .top-nav {
-  border-bottom: 0.7rem solid $line-color;
-  height: 10rem;
+  border-bottom: 0.7rem solid #40B448;
+  height: 8rem;
   width: 100%;
+  background-color: #353535;
 }
 
 .top-box {
-  background: rgb(186,186,186);
-  width: 120px;
-  height: 120px;
-  margin: -5em auto 0;
-  border: 4px solid $line-color;
-  top: -50px;
+  background: url(asset_path('icon-logo.svg')) no-repeat;
+  background-size: 87px 98px;
+  width: 87px;
+  height: 98px;
+  margin: -4rem auto 0;
 }
 
 h1.medication-header {
 	font-size: 1.5em;
 	font-weight: 600;
 	text-align: center;
-  font-family: montserratbold, Helvetica, Arial, sans-serif;
+  font-family: 'montserratbold', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: .2em;
   margin: 1.5em 0 1em 0;
+}
+
+h4 {
+	font-size: 1.25em;
+  font-family: 'montserratbold', Helvetica, Arial, sans-serif;
+  border-bottom: 1px solid $line-color;
+  padding-bottom: .3em;
+  text-transform: uppercase;
+  margin: 2em 0 1em;
+}
+
+.warnings {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 10px 10px;
+  background-color: #DE5353;
+  background-image: url(asset_path('bg-lines.png'));
+  color: #FFF;
+  text-align: center;
 }
 
 .search-form {
