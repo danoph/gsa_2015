@@ -10,6 +10,16 @@
       = display_field @medication.warnings
 
   %h4
+    Manufacturer
+  %p
+    = display_field @medication.openfda.manufacturer_name
+
+  %h4
+    Drug Classification
+  %p
+    = display_field @medication.openfda.pharm_class_epc
+
+  %h4
     Generic Name
   %p
     = display_field @medication.openfda.generic_name
