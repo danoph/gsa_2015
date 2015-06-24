@@ -1,5 +1,5 @@
 module ApplicationHelper
   def display_field(field)
-    field.join(', ')
+    field.join(', ') if field
   end
 end

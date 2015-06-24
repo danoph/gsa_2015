@@ -2,31 +2,35 @@
   %p
     No matches found!
 - else
-  %ul{ :data => {'accordion'=>true, 'class' => "accordian"} }
   %h1.medication-header
     = display_field @medication.openfda.brand_name
   -if @medication.warnings?
     .warnings
       = display_field @medication.warnings
 
-  %h4
-    Manufacturer
-  %p
-    = display_field @medication.openfda.manufacturer_name
+  %ul.accordion{ :data => {'accordion'=>true}}
+    %li.accordion-navigation
+      =link_to t('indications_and_usage'), "#panel4a"
+      #panel4a.content
+        = display_field @medication.indications_and_usage
+  .row
+    .large-6.columns
+      %h4
+        = t('manufacturer')
+      %p
+        = display_field @medication.openfda.manufacturer_name
 
-  %h4
-    Drug Classification
-  %p
-    = display_field @medication.openfda.pharm_class_epc
+  .row
+    .large-6.columns
+      %h4
+        = t('drug_classification')
+      %p
+        = display_field @medication.openfda.pharm_class_epc
 
-  %h4
-    Generic Name
-  %p
-    = display_field @medication.openfda.generic_name
-
-  %h4
-    Indications and Usage
-  %p
-    = display_field @medication.indications_and_usage
-
+  .row
+    .large-6.columns
+      %h4
+        = t('generic_name')
+      %p
+        = display_field @medication.openfda.generic_name
 

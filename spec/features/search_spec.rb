@@ -17,8 +17,7 @@ describe 'Searching for a drug' do
     it 'shows search results' do
       visit searches_path(search_params)
 
-      expect(page).to have_content("Search: #{query}")
-      expect(page).to have_content("(#{total_results} results)")
+      expect(page).to have_content("#{total_results} Results found for \"#{query}\"")
       expect(page).to have_content('DEXTROAMPHETAMINE SULFATE')
     end
 
@@ -42,8 +41,7 @@ describe 'Searching for a drug' do
     it 'shows error' do
       visit searches_path(search_params)
 
-      expect(page).to have_content("Search: #{query}")
-      expect(page).to have_content("(#{total_results} results)")
+      expect(page).to have_content("#{total_results} Results found for \"#{query}\"")
       expect(page).to have_content('No matches found!')
     end
   end

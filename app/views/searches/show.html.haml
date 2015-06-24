@@ -1,8 +1,7 @@
 %h1.medication-header
-  Search: #{@search.query} (#{@search.total_results} results)
-
+  #{@search.total_results} Results found for "#{@search.query}"
 - if @search.error?
-  %p= @search.error_message
+  =link_to @search.error_message, root_path, class:"fa fa-arrow-circle-left"
 - else
   - @search.results.each do |result|
     %p

@@ -1,6 +1,4 @@
-$searchbox-placeholder-color: #333;
-$line-color: rgb(131, 131, 131);
-
+@import 'settings';
 @font-face {
     font-family: 'montserratbold';
     src: url(asset_path('montserrat-bold-webfont.eot'));
@@ -25,9 +23,16 @@ $line-color: rgb(131, 131, 131);
     font-style: normal;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
-  background: rgb(214,214,214);
   font-family: 'montserratregular', Helvetica, Arial, sans-serif;
+}
+
+a.fa:before {
+  margin-right: .25em;
 }
 
 strong {
@@ -35,7 +40,7 @@ strong {
 }
 
 .top-nav {
-  border-bottom: 0.7rem solid #40B448;
+  border-bottom: 0.7rem solid $app-primary-color;
   height: 8rem;
   width: 100%;
   background-color: #353535;
@@ -79,8 +84,37 @@ h4 {
   text-align: center;
 }
 
-.search-form {
-  margin-top: 1rem;
+
+.search-field-container {
+  position: relative;
+
+  button {
+    background: none;
+    border: 0;
+    width: auto !important;
+    display: inline-block !important;
+    position: absolute;
+    left: 0;
+    font-size: 1.5em;
+    color: #353535;
+    padding: 0 .5em;
+  }
+
+  .searchbox {
+    text-indent: 3em;
+    background-color: #C6C6C6;
+    border: 0;
+    font-family: 'montserratbold', Helvetica, Arial, sans-serif;
+
+
+    &:focus, &:active {
+      background-color: #E8E8E8;
+    }
+  }
+}
+
+.accordion {
+  margin: 0;
 }
 
 .searchbox {

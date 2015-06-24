@@ -1,17 +1,15 @@
 %h1.medication-header
   = t(:find_a_medication)
 
-%p
-  User searches for a drug by name and views the label information online.  Potential side effects and interactions with other drugs are highlighted, as well as any contraindications.  User can potentially "browse" via drug classes or other attributes available via the drug label data service
-
 .row
-  .small-10.small-centered.columns
+  .large-6.columns
     .search-form
       = form_for @search, method: :get do |f|
-        .row.collapse
-          .small-2.columns
-            = f.button class: 'prefix', id: 'search-button' do
-              %i.fa.fa-search
-          .small-10.columns
-            = f.text_field :generic_name, placeholder: t(:search_box_hint), class: 'searchbox'
-            = f.label :generic_name, t(:search), class: 'hide'
+        .search-field-container
+          = f.button class: 'prefix', id: 'search-button' do
+            %i.fa.fa-search
+          = f.text_field :generic_name, placeholder: t(:search_box_hint), class: 'searchbox'
+          = f.label :generic_name, t(:search), class: 'hide'
+  .large-6.columns
+    %p
+      Search for a medication by generic name to see information about warnings or side effects.

@@ -25,4 +25,9 @@ en:
   search_box_hint: "Search for meds"
   browse_by_name: "Browse by name"
   find_a_medication: "Find a Medication"
+  brand_name: "Brand name"
+  manufacturer: "Manufacturer"
+  indications_and_usage: "Indications and Usage"
+  drug_classification: "Drug Classification"
+  generic_name: "Generic Name"
 
