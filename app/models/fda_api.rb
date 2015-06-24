@@ -16,7 +16,12 @@ class FdaApi
   API_KEY = ENV['FDA_API_KEY']
 
   def self.get_label(query)
-    response = connection.get "/drug/label.json", build_params(search: "generic_name:#{query}" )
+    response = connection.get "/drug/label.json", build_params(search: "generic_name:#{query}", limit: 100)
+    parse_response(response.body)
+  end
+
+  def self.find_drug_by_id(drug_id)
+    response = connection.get "/drug/label.json", build_params(search: "id:#{drug_id}")
     parse_response(response.body)
   end
 

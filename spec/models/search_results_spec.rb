@@ -16,7 +16,7 @@ describe SearchResults do
     allow(Hashie::Mash).to receive(:new).with(raw_response) { fda_response }
   end
 
-  subject { described_class.new(query, raw_response) }
+  subject { described_class.new(raw_response, query) }
 
   describe '#query' do
     it 'returns original query' do

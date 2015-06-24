@@ -10,7 +10,7 @@ describe Search do
 
     before do
       allow(FdaApi).to receive(:get_label).with(query) { results }
-      allow(SearchResults).to receive(:new).with(query, results) { search_results }
+      allow(SearchResults).to receive(:new).with(results, query) { search_results }
     end
 
     it 'gets results from FDA api' do

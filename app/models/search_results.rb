@@ -3,9 +3,9 @@ class SearchResults
 
   delegate :results, :meta, :meta?, :error, :error?, to: :fda_response
 
-  def initialize(query, raw_response)
-    @query = query
+  def initialize(raw_response, query = nil)
     @raw_response = raw_response
+    @query = query
     @fda_response = Hashie::Mash.new(@raw_response)
   end
 
