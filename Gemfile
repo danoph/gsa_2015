@@ -24,5 +24,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara-webkit'
   gem 'spring'
+  gem 'rspec_junit_formatter'
 end
 
