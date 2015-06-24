@@ -1,0 +1,16 @@
+- unless @medication
+  %p
+    No matches found!
+- else
+  %h1.medication-header
+    = display_field @medication.openfda.brand_name
+
+  %h2
+    Generic Name
+  %p
+    = display_field @medication.openfda.generic_name
+
+  %p
+    = display_field @medication.warnings
+
+  = @medication

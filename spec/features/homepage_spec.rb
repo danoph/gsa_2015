@@ -17,7 +17,6 @@ describe 'Home page' do
       click_button('search-button')
 
       expect(page).to have_content('Search: adderall')
-      expect(page).to have_content('Attention Deficit')
     end
   end
 end

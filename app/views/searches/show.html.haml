@@ -6,6 +6,6 @@
 - else
   - @search.results.each do |result|
     %p
-      %strong= result.openfda.generic_name
-
-  = @search.results
+      %strong= link_to result.openfda.brand_name.first, medication_path(result.id)
+      %br
+      = result.openfda.generic_name.first

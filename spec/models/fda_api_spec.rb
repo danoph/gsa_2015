@@ -9,7 +9,7 @@ describe FdaApi do
     subject { described_class }
 
     before do
-      stub_request(:get, "https://api.fda.gov/drug/label.json?api_key=#{ENV['FDA_API_KEY']}&search=generic_name:#{query}").
+      stub_request(:get, "https://api.fda.gov/drug/label.json?api_key=#{ENV['FDA_API_KEY']}&search=generic_name:#{query}&limit=100").
         to_return(body: drug_response.to_json)
     end
 

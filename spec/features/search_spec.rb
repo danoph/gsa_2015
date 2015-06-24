@@ -19,7 +19,19 @@ describe 'Searching for a drug' do
 
       expect(page).to have_content("Search: #{query}")
       expect(page).to have_content("(#{total_results} results)")
-      expect(page).to have_content('Attention Deficit')
+      expect(page).to have_content('DEXTROAMPHETAMINE SULFATE')
+    end
+
+    describe 'clicking a result' do
+      it 'goes to medication detail page' do
+        visit searches_path(search_params)
+
+        click_link 'Procentra'
+
+        expect(page).to have_content('Procentra')
+        expect(page).to have_content('Independence Pharmaceuticals, LLC')
+        expect(page).to have_content('Central Nervous System Stimulant [EPC]')
+      end
     end
   end
 
