@@ -30,6 +30,10 @@ body {
   font-family: montserratregular, Helvetica, Arial, sans-serif;
 }
 
+strong {
+  font-family: 'montserratbold';
+}
+
 .top-nav {
   border-bottom: 0.7rem solid $line-color;
   height: 10rem;
@@ -52,6 +56,7 @@ h1.medication-header {
   font-family: montserratbold, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: .2em;
+  margin: 1.5em 0 1em 0;
 }
 
 .search-form {
