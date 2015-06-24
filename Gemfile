@@ -14,6 +14,7 @@ gem "haml-rails", "~> 0.9"
 gem 'foundation-rails'
 gem 'faraday'
 gem 'json'
+gem 'hashie'
 
 group :test do
   gem 'webmock'

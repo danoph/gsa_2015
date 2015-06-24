@@ -1,11 +1,11 @@
 %h1.medication-header
-  Search: #{@search.query}
+  Search: #{@search.query} (#{@search.total_results} results)
 
 - if @search.error?
   %p= @search.error_message
 - else
   - @search.results.each do |result|
     %p
-      %strong= result[:openfda][:generic_name]
+      %strong= result.openfda.generic_name
 
   = @search.results

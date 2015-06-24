@@ -12,22 +12,26 @@ describe 'Searching for a drug' do
   end
 
   describe 'searching api' do
+    let(:total_results) { 29 }
 
     it 'shows search results' do
       visit searches_path(search_params)
 
       expect(page).to have_content("Search: #{query}")
+      expect(page).to have_content("(#{total_results} results)")
       expect(page).to have_content('Attention Deficit')
     end
   end
 
   describe 'when no results' do
     let(:raw_response) { File.read(File.expand_path('../../fixtures/error_response.json', __FILE__)) }
+    let(:total_results) { 0 }
 
     it 'shows error' do
       visit searches_path(search_params)
 
       expect(page).to have_content("Search: #{query}")
+      expect(page).to have_content("(#{total_results} results)")
       expect(page).to have_content('No matches found!')
     end
   end

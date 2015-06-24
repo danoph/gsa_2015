@@ -1,29 +1,19 @@
 class SearchResults
-  attr_reader :query, :results
+  attr_reader :query, :fda_response
+
+  delegate :results, :meta, :meta?, :error, :error?, to: :fda_response
 
   def initialize(query, raw_response)
     @query = query
     @raw_response = raw_response
-    @results = raw_response.fetch(:results, [])
-  end
-
-  def error?
-    @raw_response.has_key?(:error)
+    @fda_response = Hashie::Mash.new(@raw_response)
   end
 
   def error_message
-    @raw_response[:error].fetch(:message, "") if error?
+    @fda_response.error.message if error?
   end
 
-  def meta
-    @raw_response.fetch(:meta, {})
-  end
-
-  def meta_results
-    meta.fetch(:results, {})
-  end
-
-  def total
-    meta_results.fetch(:total, 0)
+  def total_results
+    @total_results ||= meta? ? meta.results.total : 0
   end
 end
