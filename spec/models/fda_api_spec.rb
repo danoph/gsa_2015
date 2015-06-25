@@ -29,5 +29,19 @@ describe FdaApi do
         expect(subject.get_label(query, 2)).to eq(drug_response)
       end
     end
+
+    context 'multiple search terms' do
+      before do
+        search_terms = "search=generic_name:hello+AND+generic_name:world"
+        stub_request(:get, "https://api.fda.gov/drug/label.json?api_key=#{ENV['FDA_API_KEY']}&#{search_terms}&limit=20&skip=0").
+          to_return(body: drug_response.to_json)
+      end
+
+      let(:query) { 'hello world' }
+
+      it 'correctly parameterizes query params' do
+        expect(subject.get_label(query)).to eq(drug_response)
+      end
+    end
   end
 end

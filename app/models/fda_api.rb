@@ -16,7 +16,7 @@ class FdaApi
   API_KEY = ENV['FDA_API_KEY']
 
   def self.get_label(query, page = nil)
-    response = connection.get "/drug/label.json", build_params(search: "generic_name:#{query}", limit: limit, skip: get_skip_for_page(page))
+    response = connection.get "/drug/label.json", build_params(search: parse_query(query), limit: limit, skip: get_skip_for_page(page))
     parse_response(response.body)
   end
 
@@ -40,6 +40,11 @@ class FdaApi
 
   def self.limit
     20
+  end
+
+  def self.parse_query(query)
+    terms = query.gsub(/\s+/m, ' ').strip.split(' ')
+    terms.collect { |x| "generic_name:#{x}" }.join("+AND+")
   end
 
   def self.build_params(params)
