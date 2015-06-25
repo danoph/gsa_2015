@@ -1,5 +1,13 @@
 class SearchesController < ApplicationController
   def show
-    @search = Search.search_generic_name(params[:search][:generic_name], params[:page])
+    begin
+      @search = Search.search_generic_name(search_params, params[:page])
+    rescue ActionController::ParameterMissing
+      redirect_to root_path, alert: 'Please enter search criteria'
+    end
+  end
+
+  def search_params
+    params.require(:search).require(:generic_name)
   end
 end

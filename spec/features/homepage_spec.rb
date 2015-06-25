@@ -12,11 +12,20 @@ describe 'Home page' do
   describe 'searching api' do
     it 'shows search results' do
       visit root_path
+
       fill_in 'Search', with: 'adderall'
+      click_button 'search-button'
 
-      click_button('search-button')
+      expect(page).to have_content('Results found for "adderall"')
+    end
 
-      expect(page).to have_content("Results found for \"adderall\"")
+    it 'requires search params' do
+      visit root_path
+
+      click_button 'search-button'
+
+      expect(page.current_path).to eq(root_path)
+      expect(page).to have_content('Please enter search criteria')
     end
   end
 end

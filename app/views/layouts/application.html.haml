@@ -19,5 +19,11 @@
 
     .row
       .small-12.columns
+        - if flash[:alert]
+          .alert-box.alert.radius{ data: { alert: true } }
+            = flash[:alert]
+            = link_to '#', class: 'close' do
+              &times;
+
         = yield
 

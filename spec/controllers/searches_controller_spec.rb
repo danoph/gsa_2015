@@ -12,5 +12,12 @@ describe SearchesController do
       get :show, search_params
       expect(assigns(:search)).to eq(search)
     end
+
+    context 'no query given' do
+      it 'redirects to home page and shows flash alert' do
+        get :show, {}
+        expect(page).to redirect_to(root_path)
+      end
+    end
   end
 end
