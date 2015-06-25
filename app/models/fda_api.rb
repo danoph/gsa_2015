@@ -44,7 +44,8 @@ class FdaApi
 
   def self.parse_query(query)
     terms = query.gsub(/\s+/m, ' ').strip.split(' ')
-    terms.collect { |x| "generic_name:#{x}" }.join("+AND+")
+    terms.collect { |x| "generic_name:#{x}" }.join("+AND+") + "+OR+" +
+    terms.collect { |x| "brand_name:#{x}" }.join("+AND+")
   end
 
   def self.build_params(params)
@@ -59,7 +60,7 @@ class FdaApi
     @connection ||= Faraday.new(url: "https://api.fda.gov") do |faraday|
       faraday.request  :url_encoded             # form-encode POST params
       faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
-      faraday.options.params_encoder = DoNotEncoder #TODO
+      faraday.options.params_encoder = DoNotEncoder
     end
   end
 end
