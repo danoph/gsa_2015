@@ -51,7 +51,7 @@ describe 'Searching for a drug' do
     it 'goes to homepage' do
       visit searches_path(search_params)
 
-      click_link 'logo'
+      click_link 'GSA Prototype'
 
       expect(page.current_path).to eq(root_path)
     end
