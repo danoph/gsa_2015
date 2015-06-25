@@ -1,12 +1,13 @@
 %h1.medication-header
   #{@search.total_results} Results found for "#{@search.query}"
+
 - if @search.error?
-  =link_to @search.error_message, root_path, class:"fa fa-arrow-circle-left"
+  = link_to @search.error_message, root_path, class:"fa fa-arrow-circle-left"
 - else
   - @search.results.each do |result|
     %p
-      %strong= link_to result.openfda.brand_name.first, medication_path(result.id)
+      %strong= link_to result.openfda.brand_name.try(:first), medication_path(result.id)
       %br
-      = result.openfda.generic_name.first
+      = result.openfda.generic_name.try(:first)
 
 = paginate @search
