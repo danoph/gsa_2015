@@ -46,4 +46,14 @@ describe 'Searching for a drug' do
       expect(page).to have_content('No matches found!')
     end
   end
+
+  describe 'clicking logo' do
+    it 'goes to homepage' do
+      visit searches_path(search_params)
+
+      click_link 'logo'
+
+      expect(page.current_path).to eq(root_path)
+    end
+  end
 end
