@@ -3,7 +3,8 @@ require 'rails_helper'
 describe 'Searching for a drug' do
   let(:raw_response) { File.read(File.expand_path('../../fixtures/adderall.json', __FILE__)) }
   let(:query) { 'amphetamine' }
-  let(:search_params) { { search: { generic_name: query } } }
+  let(:current_page) { '1' }
+  let(:search_params) { { search: { generic_name: query }, page: current_page } }
 
   before do
     stub_request(:get, /api.fda.gov\/drug\/label.json/).

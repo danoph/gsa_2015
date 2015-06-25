@@ -8,3 +8,5 @@
       %strong= link_to result.openfda.brand_name.first, medication_path(result.id)
       %br
       = result.openfda.generic_name.first
+
+= paginate @search

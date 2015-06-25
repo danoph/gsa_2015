@@ -15,6 +15,7 @@ gem 'foundation-rails'
 gem 'faraday'
 gem 'json'
 gem 'hashie'
+gem 'kaminari'
 
 group :test do
   gem 'webmock'
