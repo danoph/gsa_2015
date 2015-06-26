@@ -6,8 +6,9 @@
 - else
   - @search.results.each do |result|
     %p
-      %strong= link_to result.openfda.brand_name.try(:first), medication_path(result.id)
-      %br
-      = result.openfda.generic_name.try(:first)
+      = link_to medication_path(result.id) do
+        %strong= result.openfda.brand_name.try(:first)
+        %br
+        = result.openfda.generic_name.try(:first)
 
 = paginate @search
