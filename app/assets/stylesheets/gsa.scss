@@ -29,7 +29,25 @@ html {
 
 body {
   font-family: 'montserratregular', Helvetica, Arial, sans-serif;
+
+  &:after {
+    content: "\f071  Demo only. Not meant for medical advice, diagnosis, or treatment.";
+    font-family: FontAwesome, 'montserratregular';
+    display: block;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: red;
+    width: 100%;
+    padding: .75em;
+    text-transform: uppercase;
+    background-color: #C6C6C6;
+    background-image: url(asset_path('bg-lines.png'));
+    /* content:"\f071"; */
+  }
 }
+
+
 
 a.fa:before {
   margin-right: .25em;
@@ -132,5 +150,12 @@ h4 {
 
   &:-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    $searchbox-placeholder-color;
+  }
+
+  &:focus {
+     &::-webkit-input-placeholder {color: #e8e8e8;}
+     &:-moz-placeholder  {color: #e8e8e8;}
+     &::-moz-placeholder {color: #e8e8e8;}
+     &:-ms-input-placeholder { color: #e8e8e8; }
   }
 }
