@@ -20,17 +20,15 @@
 
     .large-6.columns
       %h4
-        = t('drug_classification')
-      %p
-        = display_field @medication.openfda.pharm_class_epc
-
-  .row
-    .large-6.columns
-      %h4
         = t('generic_name')
       %p
         = display_field @medication.openfda.generic_name
-    .large-6.columns
+        %em.classification
+          = display_field @medication.openfda.pharm_class_epc
+
+
+  .row
+    .large-12.columns
       %h4
         = t('other_information')
       %ul.accordion{ :data => {'accordion'=>true}}
@@ -42,3 +40,9 @@
           =link_to t('indications_and_usage'), "#panel4a"
           #panel4a.content
             = display_field @medication.indications_and_usage
+
+
+  .row
+    .large-6.columns
+      #d3data
+
