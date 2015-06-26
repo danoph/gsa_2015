@@ -93,7 +93,6 @@ h4 {
   padding: 10px 10px;
   background-color: #DE5353;
   background-image: url(asset_path('bg-lines.png'));
-  color: #FFF;
   text-align: center;
 }
 
@@ -128,6 +127,34 @@ h4 {
 
 .accordion {
   margin: 0;
+
+  .accordion-navigation > a:before, dd > a:before {
+    content: "\f13a  ";
+    font-size: 1.5em;
+    vertical-align: middle;
+    font-family: FontAwesome, 'montserratregular';
+  }
+
+  .accordion-navigation.warnings > a, .warnings dd > a {
+    background-color: transparent;
+    color: #FFF;
+    font-family: 'montserratbold', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    line-height: 1;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &:before {
+      content: "\f071  ";
+    }
+  }
+
+  .accordion-navigation > .content.active, dd > .content.active {
+    background-color: rgba(255,255,255,.75)
+  }
 }
 
 ul.search-results {
