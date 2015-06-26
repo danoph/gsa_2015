@@ -5,10 +5,11 @@
   = link_to @search.error_message, root_path, class:"fa fa-arrow-circle-left"
 - else
   - @search.results.each do |result|
-    %p
-      = link_to medication_path(result.id) do
-        %strong= result.openfda.brand_name.try(:first)
-        %br
-        = result.openfda.generic_name.try(:first)
+    %ul.search-results
+      %li
+        = link_to medication_path(result.id) do
+          %strong= result.openfda.brand_name.try(:first)
+          %br
+          = result.openfda.generic_name.try(:first)
 
 = paginate @search
