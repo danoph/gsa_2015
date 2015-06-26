@@ -43,9 +43,10 @@ class FdaApi
   end
 
   def self.parse_query(query)
-    terms = query.gsub(/\s+/m, ' ').strip.split(' ')
-    terms.collect { |x| "generic_name:#{x}" }.join("+AND+") + "+OR+" +
-    terms.collect { |x| "brand_name:#{x}" }.join("+AND+")
+    terms = query.gsub(/[^0-9a-zA-Z ]/i, '').gsub(/\s+/m, ' ').strip.split(' ')
+    generic_name = terms.collect { |x| "generic_name:#{x}" }.join("+AND+")
+    brand_name = terms.collect { |x| "brand_name:#{x}" }.join("+AND+")
+    "(#{generic_name})+OR+(#{brand_name})"
   end
 
   def self.build_params(params)

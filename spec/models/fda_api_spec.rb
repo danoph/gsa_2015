@@ -5,7 +5,7 @@ describe FdaApi do
   let(:query) { 'dextroamphetamine' }
   let(:drug_response) { { results: 'drug response' } }
   let(:skip) { 0 }
-  let(:search_url) { "https://api.fda.gov/drug/label.json?api_key=#{ENV['FDA_API_KEY']}&search=generic_name:#{query}+OR+brand_name:#{query}&limit=20&skip=#{skip}" }
+  let(:search_url) { "https://api.fda.gov/drug/label.json?api_key=#{ENV['FDA_API_KEY']}&search=(generic_name:#{query})+OR+(brand_name:#{query})&limit=20&skip=#{skip}" }
 
   describe '.get_label' do
     subject { described_class }
@@ -34,7 +34,7 @@ describe FdaApi do
 
     context 'multiple search terms' do
       let(:search_url) { "https://api.fda.gov/drug/label.json?api_key=#{ENV['FDA_API_KEY']}&#{search_terms}&limit=20&skip=#{skip}" }
-      let(:search_terms) { "search=generic_name:hello+AND+generic_name:world+OR+brand_name:hello+AND+brand_name:world" }
+      let(:search_terms) { "search=(generic_name:hello+AND+generic_name:world)+OR+(brand_name:hello+AND+brand_name:world)" }
 
       before do
         stub_request(:get, "https://api.fda.gov/drug/label.json?api_key=#{ENV['FDA_API_KEY']}&#{search_terms}&limit=20&skip=0").
