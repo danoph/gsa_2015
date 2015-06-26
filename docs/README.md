@@ -8,11 +8,12 @@ This folder contains additional descriptive documentation (including pictures an
 Kickoff Meeting:
 - (pictures, etc., tbd)
 
-Iterative Process:
+Agile Process Examples:
 - iteration-example.md
+- retrospective.md
 
 User Experience Documentation:
-- user-interviews.md
+- user-research.md
 
 ## WWT Asynchrony Labs Processes Documentation
 
