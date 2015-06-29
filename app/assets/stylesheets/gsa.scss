@@ -35,8 +35,8 @@ body {
     content: "\f071  Demo only. Not meant for medical advice, diagnosis, or treatment.";
     font-family: FontAwesome, 'montserratregular';
     display: block;
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    top: 0;
     text-align: center;
     width: 100%;
     padding: .75em;
@@ -94,6 +94,7 @@ h4 {
   background-color: #DE5353;
   background-image: url(asset_path('bg-lines.png'));
   text-align: center;
+  position: relative;
 }
 
 
@@ -128,11 +129,27 @@ h4 {
 .accordion {
   margin: 0;
 
-  .accordion-navigation > a:before, dd > a:before {
+  .accordion-navigation > a:before, dd > a:before, .accordion-navigation.warnings:before {
     content: "\f13a  ";
     font-size: 1.5em;
     vertical-align: middle;
     font-family: FontAwesome, 'montserratregular';
+    transition: all 200ms ease;
+  }
+  
+  .accordion-navigation.active > a:before, dd.active > a:before, .accordion-navigation.warnings.active:before {
+    -webkit-transform: rotate(-180deg); /* Safari */
+    -moz-transform: rotate(-180deg); /* Firefox */
+    -ms-transform: rotate(-180deg); /* IE */  
+    -o-transform: rotate(-180deg); /* Opera */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2); /* Internet Explorer */
+  }
+
+  .accordion-navigation.warnings:before {
+      position: absolute; 
+      left: 1em;
+      color: #FFF;
+      top: 1em;    
   }
 
   .accordion-navigation.warnings > a, .warnings dd > a {
