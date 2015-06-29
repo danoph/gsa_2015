@@ -7,10 +7,7 @@
 
   -if @medication.warnings?
     %ul.accordion{ :data => {'accordion'=>true}}
-      %li.accordion-navigation.warnings
-        =link_to t('warnings'), "#warning_panel", class: 'warnings'
-        #warning_panel.content
-          = display_field @medication.warnings
+      = render_panel field_name: 'warnings', field_data: @medication.warnings, extra_class: 'warnings'
   .row
     .large-6.columns
       %h4
