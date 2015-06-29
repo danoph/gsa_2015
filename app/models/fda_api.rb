@@ -13,7 +13,6 @@ class DoNotEncoder
 end
 
 class FdaApi
-  API_KEY = ENV['FDA_API_KEY']
 
   def self.get_label(query, page = nil)
     response = connection.get "/drug/label.json", build_params(search: parse_query(query), limit: limit, skip: get_skip_for_page(page))
@@ -50,7 +49,9 @@ class FdaApi
   end
 
   def self.build_params(params)
-    { api_key: API_KEY }.merge(params)
+    api_key = ENV['FDA_API_KEY']
+    api_key_params = api_key.nil? ? {} : { api_key: api_key }
+    api_key_params.merge(params)
   end
 
   def self.parse_response(response)
