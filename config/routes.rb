@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resource :searches, only: :show
 
   resources :medications, only: :show
+  resource :errors, only: :show
+
+  match '*a', to: 'errors#show', via: [:get, :post, :put]
 end

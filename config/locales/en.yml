@@ -30,4 +30,4 @@ en:
   indications_and_usage: "Indications and Usage"
   drug_classification: "Drug Classification"
   generic_name: "Generic Name"
-
+  generic_error: 'Something went wrong during your request. Please try again.'
