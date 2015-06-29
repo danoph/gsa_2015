@@ -129,27 +129,42 @@ h4 {
 .accordion {
   margin: 0;
 
-  .accordion-navigation > a:before, dd > a:before, .accordion-navigation.warnings:before {
-    content: "\f13a  ";
+  .accordion-navigation {position: relative;}
+
+  .accordion-navigation > a, dd > a {
+    font-family: 'montserratbold', Helvetica, Arial, sans-serif;
+    padding: 1rem 2.5rem;
+  }
+
+  .accordion-navigation {
+
+    &:before, dd:before {
+    position: absolute;
+    left: .5em;
+    top: .35em;
+    }
+
+    &.warnings:before {
+    color: #FFF;
+    top: 1em;
+    }
+
+  }
+
+  .accordion-navigation:before, dd:before, .accordion-navigation.warnings > a:before {
+    content: "\f13a";
     font-size: 1.5em;
     vertical-align: middle;
     font-family: FontAwesome, 'montserratregular';
     transition: all 200ms ease;
   }
-  
-  .accordion-navigation.active > a:before, dd.active > a:before, .accordion-navigation.warnings.active:before {
+
+  .accordion-navigation.active:before, dd.active:before {
     -webkit-transform: rotate(-180deg); /* Safari */
     -moz-transform: rotate(-180deg); /* Firefox */
-    -ms-transform: rotate(-180deg); /* IE */  
+    -ms-transform: rotate(-180deg); /* IE */
     -o-transform: rotate(-180deg); /* Opera */
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2); /* Internet Explorer */
-  }
-
-  .accordion-navigation.warnings:before {
-      position: absolute; 
-      left: 1em;
-      color: #FFF;
-      top: 1em;    
   }
 
   .accordion-navigation.warnings > a, .warnings dd > a {
@@ -165,7 +180,7 @@ h4 {
     }
 
     &:before {
-      content: "\f071  ";
+      content: "\f071";
     }
   }
 
