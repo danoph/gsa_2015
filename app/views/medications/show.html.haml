@@ -7,10 +7,7 @@
 
   -if @medication.warnings?
     %ul.accordion{ :data => {'accordion'=>true}}
-      %li.accordion-navigation.warnings
-        =link_to t('warnings'), "#panel1a", class: 'warnings'
-        #panel1a.content
-          = display_field @medication.warnings
+      = render_panel field_name: 'warnings', field_data: @medication.warnings, extra_class: 'warnings'
   .row
     .large-6.columns
       %h4
@@ -32,15 +29,8 @@
       %h4
         = t('other_information')
       %ul.accordion{ :data => {'accordion'=>true}}
-        %li.accordion-navigation
-          =link_to t('adverse_reactions'), "#panel3a"
-          #panel3a.content
-            = display_field @medication.adverse_reactions
-        %li.accordion-navigation
-          =link_to t('indications_and_usage'), "#panel4a"
-          #panel4a.content
-            = display_field @medication.indications_and_usage
-
+        = render_panel field_name: 'adverse_reactions', field_data: @medication.adverse_reactions
+        = render_panel field_name: 'indications_and_usage', field_data: @medication.indications_and_usage
 
   .row
     .large-6.columns

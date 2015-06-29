@@ -19,6 +19,7 @@ gem 'kaminari'
 
 group :test do
   gem 'webmock'
+  gem 'i18n-tasks'
 end
 
 group :development, :test do
