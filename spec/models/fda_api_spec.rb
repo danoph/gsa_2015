@@ -47,5 +47,27 @@ describe FdaApi do
         expect(subject.get_label(query)).to eq(drug_response)
       end
     end
+
+    context 'build params' do
+
+      let(:params) { { a: 'a', b: 'b' } }
+
+      it 'adds in api key' do
+        expected_params = subject.build_params(params)
+        expect(expected_params[:api_key]).to eq(ENV['FDA_API_KEY'])
+      end
+
+      context 'with no api key in environment' do
+        before do
+          ENV['FDA_API_KEY'] = nil
+        end
+
+        it 'adds in api key' do
+          expected_params = subject.build_params(params)
+          expect(expected_params.keys).to_not include(:api_key)
+        end
+
+      end
+    end
   end
 end
