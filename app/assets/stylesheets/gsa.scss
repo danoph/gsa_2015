@@ -96,8 +96,8 @@ h4 {
   padding: 10px 10px;
   background-color: #DE5353;
   background-image: url(asset_path('bg-lines.png'));
-  text-align: center;
   position: relative;
+  text-align: center;
 }
 
 
@@ -132,8 +132,6 @@ h4 {
 .accordion {
   margin: 0;
 
-  .accordion-navigation {position: relative;}
-
   .accordion-navigation > a, dd > a {
     font-family: 'montserratbold', Helvetica, Arial, sans-serif;
     padding: 1rem 2.5rem;
@@ -145,25 +143,30 @@ h4 {
     }
   }
 
+  .accordion-navigation.active > a, dd.active > a {
+    background-color: transparent;
+  }
+
   .accordion-navigation {
+    position: relative;
     border-bottom: 1px solid $line-color;
     background-color: #E8E8E8;
 
     &:before, dd:before {
-    position: absolute;
-    left: .5em;
-    top: .35em;
+      position: absolute;
+      left: .5em;
+      top: .35em;
     }
 
     &.warnings {
-
       background-color: #DE5353;
-
 
       &:before {
         color: #FFF;
         top: 1em;
       }
+
+      .content {text-align:left;}
     }
   }
 
