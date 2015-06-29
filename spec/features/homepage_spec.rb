@@ -27,5 +27,15 @@ describe 'Home page' do
       expect(page.current_path).to eq(root_path)
       expect(page).to have_content('Please enter search criteria')
     end
+    context 'validation' do
+      let(:search_text) { "We know you're dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf."}
+      it 'limits the search area to 100 characters' do
+        visit root_path
+
+        fill_in 'Search', with: search_text
+
+        find_field('Search').value.should eq(search_text[0..99])
+      end
+    end
   end
 end
