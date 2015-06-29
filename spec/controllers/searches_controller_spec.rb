@@ -6,10 +6,13 @@ describe SearchesController do
     let(:page) { '1' }
     let(:search_params) { { search: { generic_name: search_query }, page: page } }
     let(:search) { double 'search' }
+    let(:search_results) { double 'search_results' }
 
     it 'gets search results' do
-      expect(Search).to receive(:search_generic_name).with(search_query, page) { search }
+      expect(Search).to receive(:search_generic_name).with(search_query, page) { search_results }
+      expect(Search).to receive(:new) { search }
       get :show, search_params
+      expect(assigns(:search_results)).to eq(search_results)
       expect(assigns(:search)).to eq(search)
     end
 

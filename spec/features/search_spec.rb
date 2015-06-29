@@ -32,6 +32,18 @@ describe 'Searching for a drug' do
         expect(page).to have_content('Independence Pharmaceuticals, LLC')
         expect(page).to have_content('Central Nervous System Stimulant [EPC]')
       end
+
+    end
+
+    describe 'allows you to search again' do
+      it 'shows search results' do
+        visit searches_path(search_params)
+
+        fill_in 'Search', with: 'adderall'
+        click_button 'search-button'
+
+        expect(page).to have_content('Results found for "adderall"')
+      end
     end
   end
 

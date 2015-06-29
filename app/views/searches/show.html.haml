@@ -1,15 +1,19 @@
 %h1.medication-header
-  #{@search.total_results} Results found for "#{@search.query}"
+  #{search_results.total_results} Results found for "#{search_results.query}"
 
-- if @search.error?
-  = link_to @search.error_message, root_path, class:"fa fa-arrow-circle-left"
-- else
-  - @search.results.each do |result|
-    %ul.search-results
-      %li
-        = link_to medication_path(result.id) do
-          %strong= result.openfda.brand_name.try(:first)
-          %br
-          = result.openfda.generic_name.try(:first)
+.row
+  =render('shared/search_container')
 
-= paginate @search
+.row
+  - if search_results.error?
+    = link_to search_results.error_message, root_path, class:"fa fa-arrow-circle-left"
+  - else
+    - search_results.results.each do |result|
+      %ul.search-results
+        %li
+          = link_to medication_path(result.id) do
+            %strong= result.openfda.brand_name.try(:first)
+            %br
+            = result.openfda.generic_name.try(:first)
+
+= paginate search_results
