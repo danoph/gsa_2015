@@ -31,3 +31,4 @@ en:
   drug_classification: "Drug Classification"
   generic_name: "Generic Name"
   generic_error: 'Something went wrong during your request. Please try again.'
+  homepage_text: "Search for a drug by name to view label information and potential side effects."
