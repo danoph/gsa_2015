@@ -34,7 +34,7 @@ describe 'Home page' do
 
         fill_in 'Search', with: search_text
 
-        find_field('Search').value.should eq(search_text[0..99])
+        expect(find_field('Search').value).to eq(search_text[0..99])
       end
     end
   end
