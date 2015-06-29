@@ -21,6 +21,15 @@ describe 'Displaying a drug' do
     end
   end
 
+  describe 'incomplete results' do
+    let(:raw_response) { File.read(File.expand_path('../../fixtures/incomplete_object_response.json', __FILE__)) }
+    it 'hides the adverse reactions panel when it is empty' do
+      visit medication_path(drug_params)
+
+      expect(page).to  have_selector('.accordion-navigation', count: 2)
+    end
+  end
+
   describe 'when no result' do
     let(:raw_response) { File.read(File.expand_path('../../fixtures/error_response.json', __FILE__)) }
 

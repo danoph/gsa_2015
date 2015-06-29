@@ -1,0 +1,5 @@
+-if field_data
+  %li.accordion-navigation
+    =link_to t(field_name), "##{panel_id}"
+    .content{id: panel_id }
+      = display_field field_data
