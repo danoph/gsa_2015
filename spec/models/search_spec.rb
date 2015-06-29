@@ -1,6 +1,22 @@
 require 'rails_helper'
 
 describe Search do
+  describe 'initialize' do
+
+    it 'should default generic name to blank' do
+      search = Search.new
+
+      expect(search.generic_name).to eq('')
+    end
+
+    it 'should default generic_name' do
+      expected_name = 'generic name'
+      search = Search.new(expected_name)
+
+      expect(search.generic_name).to eq(expected_name)
+    end
+  end
+
   describe '.search_generic_name' do
     let(:query) { double 'query' }
     let(:page) { double 'page' }

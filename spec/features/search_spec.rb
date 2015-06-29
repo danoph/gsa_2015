@@ -44,6 +44,11 @@ describe 'Searching for a drug' do
 
         expect(page).to have_content('Results found for "adderall"')
       end
+      it 'presets the search text to previous search' do
+        visit searches_path(search_params)
+
+        expect(page).to have_field('Search', with: query)
+      end
     end
   end
 
