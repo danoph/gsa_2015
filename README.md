@@ -17,7 +17,7 @@ Throughout the course of the project, our team used human-centered design techni
 
 When we learned about the extended timeframe for the project, we decided it would be appropriate to take a little time to have a [mini-retrospective](https://github.com/dwafler/gsa_2015/blob/master/docs/retrospective.md). We used this meeting to talk about what was and wasn't going well on the project, and then transitioned into a second ideation/planning sesson.
 
-Throughout our development process, we used [iterative software development techniques](https://github.com/dwafler/gsa_2015/blob/master/docs/iteration-example.md), and both a [physical and electronic Kanban](https://github.com/dwafler/gsa_2015/blob/master/docs/kanban-trello) (Trello, which mirrored our physical board) to track work. 
+Throughout our development process, we used [iterative software development techniques](https://github.com/dwafler/gsa_2015/blob/master/docs/iteration-example.md), and both a [physical and electronic Kanban](https://github.com/dwafler/gsa_2015/tree/master/docs/pictures/kanban-trello) (Trello, which mirrored our physical board) to track work. 
 
 Our prototype is written in Ruby. As per instructions, it is provided as open-source (under the MIT License) and is built on open source technologies, including Docker, Rails, Jenkins, Foundation, JQuery, and Font Awesome. We designed it using a responsive layout so that it works on multiple devices and form-factors (we've tested it on PCs, tablets, and phones). 
 
