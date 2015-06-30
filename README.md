@@ -1,7 +1,7 @@
 README
 ======
 
-Check out the working prototype at http://fda.ninja/.
+Check out our working prototype at http://fda.ninja/.
 
 ## Description
 
