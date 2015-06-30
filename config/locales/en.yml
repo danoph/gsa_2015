@@ -17,5 +17,5 @@ en:
       last: Last
       next: Next
       previous: Previous
-      truncate: Truncate
+      truncate: '&hellip;'
   warnings: Warnings

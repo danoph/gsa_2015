@@ -16,6 +16,8 @@ gem 'faraday'
 gem 'json'
 gem 'hashie'
 gem 'kaminari'
+gem 'chartkick'
+gem "highcharts-rails"
 
 group :test do
   gem 'webmock'
