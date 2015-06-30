@@ -60,7 +60,7 @@ class FdaApi
 
   def self.build_params(params)
     api_key = ENV['FDA_API_KEY']
-    api_key_params = api_key.nil? ? {} : { api_key: api_key }
+    api_key_params = api_key.blank? ? {} : { api_key: api_key }
     api_key_params.merge(params)
   end
 
