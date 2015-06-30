@@ -1,5 +1,5 @@
-README
-======
+GSA Prototype: FDA.Ninja
+========================
 
 Check out our working prototype at http://fda.ninja/.
 
