@@ -13,6 +13,8 @@
           = link_to medication_path(result.id) do
             %strong= result.openfda.brand_name.try(:first)
             %br
+            %em= result.openfda.manufacturer_name.try(:first)
+            %br
             = result.openfda.generic_name.try(:first)
 
 = paginate search_results

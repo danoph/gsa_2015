@@ -13,6 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require highcharts
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$(function() {
+  $('#charts-panel').click();
+});

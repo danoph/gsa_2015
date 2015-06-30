@@ -9,6 +9,7 @@ en:
   indications_and_usage: Indications and Usage
   manufacturer: Manufacturer
   other_information: Other Information
+  reported_side_effects: Reported Side Effects
   search: Search
   search_box_hint: Search for medication
   views:
@@ -17,5 +18,5 @@ en:
       last: Last
       next: Next
       previous: Previous
-      truncate: Truncate
+      truncate: '&hellip;'
   warnings: Warnings

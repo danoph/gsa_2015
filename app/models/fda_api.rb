@@ -24,6 +24,16 @@ class FdaApi
     parse_response(response.body)
   end
 
+  def self.find_interactions_by_drug(drug)
+    brand_name = drug.openfda.brand_name.first
+    terms = brand_name.gsub(/[^0-9a-zA-Z ]/i, '').gsub(/\s+/m, ' ').strip.split(' ')
+
+    query_string = "patient.drug.medicinalproduct:\"#{terms.join("+")}\""
+    query_string += "&count=patient.reaction.reactionmeddrapt.exact"
+    response = connection.get "/drug/event.json", build_params(search: query_string )
+    parse_response(response.body)
+  end
+
   private
 
   def self.get_skip_for_page(page)

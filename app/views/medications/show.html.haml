@@ -31,8 +31,13 @@
       %ul.accordion{ :data => {'accordion'=>true}}
         = render_panel field_name: 'adverse_reactions', field_data: @medication.adverse_reactions
         = render_panel field_name: 'indications_and_usage', field_data: @medication.indications_and_usage
-
-  .row
-    .large-6.columns
-      #d3data
+        - unless @interaction.error?
+          %li{class: "accordion-navigation"}
+            - increment
+            =link_to t('reported_side_effects'), "##{panel_id}", id: 'charts-panel'
+            .content.active{id: panel_id }
+              .row
+                .small-12.columns{style: 'width: 100%; margin: 0 auto'}
+                  = pie_chart(@interaction.pie_format, id: 'pie_chart')
+                  = bar_chart(@interaction.chart_format)
 
