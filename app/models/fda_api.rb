@@ -30,7 +30,9 @@ class FdaApi
 
     query_string = "patient.drug.medicinalproduct:\"#{terms.join("+")}\""
     query_string += "&count=patient.reaction.reactionmeddrapt.exact"
-    response = connection.get "/drug/event.json", build_params(search: query_string )
+    final_query =  build_params(search: query_string )
+    Rails.logger.info("\n\n\n\n\n|#{final_query}|\n\n\n")
+    response = connection.get "/drug/event.json", final_query
     parse_response(response.body)
   end
 
@@ -71,6 +73,7 @@ class FdaApi
   def self.connection
     @connection ||= Faraday.new(url: "https://api.fda.gov") do |faraday|
       faraday.request  :url_encoded             # form-encode POST params
+      faraday.response :logger
       faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
       faraday.options.params_encoder = DoNotEncoder
     end

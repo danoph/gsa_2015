@@ -48,23 +48,26 @@ body {
   > .row:last-child {margin-bottom: 6em;}
 }
 
-a.fa:before {
-  margin-right: .25em;
+a.icon.fa {
+  font-family: FontAwesome, 'montserratregular', Helvetica, Arial, sans-serif;
+
+  &:before {
+    margin-right: .25em;
+  }
 }
 
 strong {
   font-family: 'montserratbold', Helvetica, Arial, sans-serif;
+  font-weight: normal;
 }
+
+p.intro {text-align: center;}
 
 .top-nav {
   border-bottom: 0.7rem solid $app-primary-color;
   height: 8rem;
   width: 100%;
   background-color: #353535;
-}
-
-@media only screen and (max-width:480px) {
-  .top-nav {height:9em;}
 }
 
 .top-box {
@@ -75,7 +78,6 @@ strong {
 
 h1.medication-header {
 	font-size: 1.5em;
-	font-weight: 600;
 	text-align: center;
   font-family: 'montserratbold', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
@@ -218,6 +220,10 @@ ul.search-results {
     border-bottom: 1px solid $line-color;
     display: block;
 
+    &:first-child {
+      border-top: 1px solid $line-color;
+    }
+
     a {
       display: block;
       padding: 1em 0;
@@ -256,5 +262,38 @@ ul.search-results {
 }
 
 .pagination-centered {
-  margin: 1em;
+  margin: 1em 0;
+
+  ul.pagination li {
+    margin-bottom: 1em;
+
+    a, button {
+      background-color: #E8E8E8;
+      color: $body-font-color;
+    }
+
+    &.current a {
+      background-color: $app-primary-color;
+      color: #FFF;
+    }
+
+    &.unavailable a {background-color: rgba(255,255,255,.1);}
+  }
 }
+
+@media only screen and (max-width:1024px) {
+  ul.search-results li a, .row > p {padding: 1em;}
+}
+
+@media only screen and (max-width:480px) {
+  .top-nav {height:10rem;}
+
+  .pagination-centered {
+    text-align: left;
+
+    ul.pagination {
+      li a, li button {font-size: 1.25em;}
+    }
+  }
+}
+

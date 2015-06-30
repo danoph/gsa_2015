@@ -5,10 +5,11 @@
   =render('shared/search_container')
 .row
   - if search_results.error?
-    = link_to search_results.error_message, root_path, class:"fa fa-arrow-circle-left"
+    .small-12.columns
+      = link_to search_results.error_message, root_path, class:"fa fa-arrow-circle-left icon"
   - else
-    - search_results.results.each do |result|
-      %ul.search-results
+    %ul.search-results
+      - search_results.results.each do |result|
         %li
           = link_to medication_path(result.id) do
             %strong= result.openfda.brand_name.try(:first)

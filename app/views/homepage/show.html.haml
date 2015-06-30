@@ -2,8 +2,6 @@
   = t(:find_a_medication)
 
 .row
-  .large-6.columns
-    = render('shared/search_container')
-  .large-6.columns
-    %p
-      = t('homepage_text')
+  = render('shared/search_container')
+  %p.intro
+    = t('homepage_text')
