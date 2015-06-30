@@ -27,6 +27,12 @@ describe 'Searching for a drug' do
       expect(page).to have_content('DEXTROAMPHETAMINE SULFATE')
     end
 
+    it 'shows the manufacturer' do
+      visit searches_path(search_params)
+
+      expect(page).to have_content("Independence Pharmaceuticals, LLC")
+    end
+
     describe 'clicking a result' do
       it 'goes to medication detail page' do
         visit searches_path(search_params)
