@@ -1,7 +1,8 @@
 Install and Run FDA.ninja Locally
 =================================
 
-# These steps will walk you through installing our app from a clean install of OSX Yosemite and walks through all the steps for getting the app up and running.
+# These steps will walk you through installing our app from a clean install of 
+# OSX Yosemite and walks through all the steps for getting the app up and running.
 
 # install xcode via app store, then run
 $ sudo xcodebuild -license
