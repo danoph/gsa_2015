@@ -1,11 +1,11 @@
-﻿Agile Practices
+Agile Practices
 ===============
 
 _Note: while we have split these brief descriptions of our practices into separate sections, these distinctions are made here more for organizational clarity than to be truly descriptive or representative of the way we think about software development, as no one piece could function properly without the other(s). Design, development, and quality assurance are all important pieces of our process throughout the entirety of a project's life-cycle._
 
 ## Software Development Practices
 
-We employed **Agile Software Development Methodology**, which is an incremental software development that places the emphasis on empowering people to collaborate and make team decisions in addition to continuous planning, continuous testing, and continuous integrations. We used Story Writing, Kanban, Test Driven Development, Pair Programming, Team Overview, and User Stories during the course of the software development to ensure an extremely high rate of project success and customer satisfaction.
+We employed **Agile Software Development Methodology**, which is an incremental software development that places the emphasis on empowering people to collaborate and make team decisions in addition to continuous planning, continuous testing, and continuous integrations. We used Story Writing, Kanban, Test Driven Development, and Pair Programming during the course of the software development to ensure an extremely high rate of project success and customer satisfaction.
 
 We employed **Kanban** boards to manage our work with an emphasis on just-in-time delivery without overloading the team members. The process, from definition of a task to its delivery to the customer, was visually displayed in the team area (using physical tack-boards or TV-displayed electronic Kanban boards, such as Trello) for participants to see and for team members to pull work from a queue. 
 
@@ -28,7 +28,7 @@ We used software version/source control (Git via GitHub) to facilitate better co
 Quality Assurance Practices
 ===========================
 
-The quality assurance practices employed for this project (as well as on any other project we do) are designed to prevent bugs, not just find and fix them. Our developers employ "pair programming" to catch errors at the keyboard and ensure to a uniform, maintainable approach to architecture and software coding standards. We embed QA personnel, whom we call "quality advocates" (because their job is to advocate for quality throughout the life-cycle of the project, not just as "assurance" at the end), into each of our development teams so that they can help facilitate quality throughout the project. For this project, one of the Writers/Content Designers/Content Strategists help serve in the the QA role.
+The quality assurance practices employed for this project (as well as all our project engagements) are designed to prevent bugs, not just find and fix them. Our developers practice "pair programming" to catch errors at the keyboard and ensure  a uniform, maintainable approach to architecture and software coding standards. We embed QA personnel, whom we call "quality advocates" (because their job is to advocate for quality throughout the life-cycle of the project, not just as "assurance" at the end), into each of our development teams so that they can help facilitate quality throughout the project. For this project, one of the Writers/Content Designers/Content Strategists help serve in the QA role.
 
 Further detail about some of our QA strategies and methods can be found below:
 
