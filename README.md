@@ -9,7 +9,7 @@ Check out our working prototype at http://fda.ninja/.
 
 ## Project Approach
 
-World Wide Technology Asynchrony Labs assembled a team to respond to the GSA RFQ and build a prototype application using our proven [Agile methodologies](https://github.com/dwafler/gsa_2015/blob/master/docs/agile-practices.md). We assigned a Product Manager to lead the team and be accountable for the quality of our delivered prototype, as well as two Front-End Web Developers, a Back-end Web Developer, a Dev Ops Engineer, a Visual Designer, two Writers/Content Designers/Content Strategists, an Agile Coach, and a pseudo "Product Owner." 
+World Wide Technology Asynchrony Labs assembled a team to respond to the GSA RFQ and build a prototype application using our proven [Agile methodologies](https://github.com/dwafler/gsa_2015/blob/master/docs/agile-practices.md), in line with the [U.S. Digital Services Playbook](https://playbook.cio.gov/). We assigned a Product Manager to lead the team and be accountable for the quality of our delivered prototype, as well as two Front-End Web Developers, a Back-end Web Developer, a Dev Ops Engineer, a Visual Designer, two Writers/Content Designers/Content Strategists, an Agile Coach, and a pseudo "Product Owner." 
 
 To help us understand what people need or could use from our prototype, we performed an "iteration zero" [Kick-off Ideation Session](https://github.com/dwafler/gsa_2015/tree/master/docs/pictures/kick-off-ideation-session), where we identified our target users and a primary [use-case](https://github.com/dwafler/gsa_2015/tree/master/docs/ux/use-case.md), planned an initial feature-set, and did some preliminary wireframing. From there, we wrote out stories, set up our development and testing environment, and began development. 
 
