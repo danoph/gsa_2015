@@ -5,7 +5,7 @@ Check out our working prototype at http://fda.ninja/.
 
 ## Description
 
-[FDA.ninja](http://fda.ninja/) enables patients, providers, and other users to search for a drug by name to view label information and potential side effects. 
+[FDA.ninja](http://fda.ninja/) allows users to view medication information by name and manufacturer providing results such as adverse reactions, warnings, usage and indications, and potential side effects. 
 
 ## Project Approach
 
